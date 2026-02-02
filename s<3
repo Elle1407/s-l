@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Zemra 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffe6ec;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      background-color: #ffd6e0;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      width: 280px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .teddy {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    #yesButton {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noButton {
+      background-color: #cccccc;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="teddy">🧸</div>
+    <h2>Willst du für immer und ewig an meiner Seite sein🤞🏻</h2>
+
+    <button id="yesButton" onclick="sayYes()">Po zemer</button>
+    <button id="noButton" onmouseover="moveNo()">Jo</button>
+  </div>
+
+  <script>
+    function sayYes() {
+      alert("Yayyy! 💘 Du hast Ja gesagt 😍");
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById("noButton");
+      const box = document.querySelector(".container");
+
+      const maxX = box.clientWidth - noBtn.offsetWidth;
+      const maxY = box.clientHeight - noBtn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+  </script>
+</body>
+</html>
